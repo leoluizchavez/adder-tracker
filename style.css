@@ -2,15 +2,17 @@ body {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .box{
     display: block;
-    width: 35%;
+    width: 25%;
     height: auto;
     border: 1px solid black;
     margin: 10px auto;
     padding: 10px;
+    text-align: center;
 
 }
 
@@ -18,4 +20,29 @@ body {
     width: 100%;
     box-sizing: border-box;
     margin: 10px 0;
+    border: 1px solid black;
+    outline: none;
+    padding: 4px 7px;
+}
+
+#input-el:focus{
+    border: 1px solid black;
+    outline: 1px solid black;
+    box-shadow: none;
+}
+
+.tracker {
+    padding: 5px;
+    border: 1px solid black;
+}
+
+button {
+    width: 25%;
+    border: none;
+    padding: 5px;
+}
+
+.btn-sec {
+    display: flex;
+    justify-content: center;
 }
