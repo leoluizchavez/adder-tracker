@@ -3,9 +3,18 @@ const trackerEl = document.getElementById("tracker-el")
 const enterBtn = document.getElementById("enter-btn")
 const clearBtn = document.getElementById("clear-btn")
 const saveList = document.getElementById("save-list")
-
 let listItems = []
 let adder = 0
+
+let leadsFromLocalStorage = JSON.parse(localStorage.getItem("myLeads"))
+// let adderFromLocalStorage = JSON.parse(localStorage.getItem("tracker"))
+
+if (leadsFromLocalStorage) {
+    listItems = leadsFromLocalStorage
+    // adder = adderFromLocalStorageFromLocalStorage
+    // trackerEl.innerHTML = `Tracker <br/> ${adder} `
+    saveListItems()    
+}
 
 enterBtn.addEventListener("click", function(){
    
@@ -17,6 +26,7 @@ enterBtn.addEventListener("click", function(){
         listItems.push(input)
         console.log(listItems)
         saveListItems()
+        storeData()
     } else {
         inputEl.value = ""
     }
@@ -44,4 +54,11 @@ function clearList(){
     listItems = []
     renderItems = ""
     saveList.innerHTML = renderItems
+    localStorage.clear()
+}
+
+function storeData(){
+    localStorage.setItem("myLeads", JSON.stringify(listItems))
+    // localStorage.setItem("tracker", JSON.stringify(adder))
+    // console.log(localStorage.getItem("myLeads"))
 }
