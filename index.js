@@ -27,13 +27,21 @@ enterBtn.addEventListener("click", function(){
 clearBtn.addEventListener("dblclick", function(){
     trackerEl.innerHTML = `Tracker <br/> ... `
     inputEl.value = ""
+    adder = 0
+    clearList()
 })
 
 function saveListItems(){
-    let renderItems = ""
+    let renderItems = "" // temporary variable to render out "listItems" array
     for(let i = 0; i < listItems.length; i++){
-        renderItems += `<li> ${listItems[i]} </li>`
+        renderItems += `<li> List ${i + 1} : ${listItems[i]} </li>`
      }
      console.log(renderItems)
      saveList.innerHTML = renderItems
+}
+
+function clearList(){
+    listItems = []
+    renderItems = ""
+    saveList.innerHTML = renderItems
 }
